@@ -57,6 +57,22 @@ Type: `string` `integer`
 #### random.date()
 #### random.dateInRange(startDate, endDate)
 
+#### random.color([saturation])
+
+Returns a random [aesthetically pleasing color](https://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/) as a [`color`](https://github.com/Qix-/color) object.
+
+```js
+random.color(0.5).hex().toString()
+//=> '#AAF2B0'
+```
+
+##### saturation
+
+Type: `number`<br>
+Default: `0.5`
+
+Saturation percentage in the range `0...1`.
+
 *"Pull request welcome" for additional commonly used random methods.*
 
 ### Randoma.seed()

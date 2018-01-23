@@ -36,6 +36,7 @@
 	],
 	"dependencies": {
 		"@sindresorhus/string-hash": "^1.0.0",
+		"color": "^2.0.1",
 		"park-miller": "^1.0.0"
 	},
 	"devDependencies": {

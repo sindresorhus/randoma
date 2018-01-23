@@ -1,8 +1,10 @@
 'use strict';
 const ParkMiller = require('park-miller');
 const stringHash = require('@sindresorhus/string-hash');
+const color = require('color');
 
 const MAX_INT32 = 2147483647;
+const GOLDEN_RATIO_CONJUGATE = 0.618033988749895;
 
 module.exports = class {
 	constructor(options = {}) {
@@ -45,6 +47,20 @@ module.exports = class {
 
 	dateInRange(startDate, endDate) {
 		return new Date(this.integerInRange(startDate.getTime(), endDate.getTime()));
+	}
+
+	color(saturation) {
+		saturation = saturation || 0.5;
+
+		let hue = this.float();
+		hue += GOLDEN_RATIO_CONJUGATE;
+		hue %= 1;
+
+		return color({
+			h: hue * 360,
+			s: saturation * 100,
+			v: 95
+		});
 	}
 };
 

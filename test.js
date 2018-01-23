@@ -147,6 +147,11 @@ test('.dateInRange()', t => {
 	runAsserts(t, 'dateInRange', assertDateInRange);
 });
 
+test('.color()', t => {
+	const random = new Randoma({seed: 1});
+	t.is(random.color(0.5).hex().toString(), '#799CF2');
+});
+
 test('string seed', t => {
 	const seed = '🦄';
 
