@@ -54,6 +54,7 @@ Type: `string` `integer`
 #### random.float()
 #### random.floatInRange(min, max)
 #### random.boolean()
+#### random.arrayItem(array)
 #### random.date()
 #### random.dateInRange(startDate, endDate)
 

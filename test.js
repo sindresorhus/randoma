@@ -64,6 +64,20 @@ function assertBoolean(t, seed) {
 	t.true(average < 10000);
 }
 
+function assertArrayItem(t, seed) {
+	const random = new Randoma({seed});
+	const fixture = [1, 2, 3, 4, 5];
+	const set = new Set();
+
+	for (let i = 0; i < ITERATIONS; i++) {
+		const result = random.arrayItem(fixture);
+		t.true(is.number(result));
+		set.add(result);
+	}
+
+	t.deepEqual([...set].sort(), fixture);
+}
+
 function assertDate(t, seed) {
 	const random = new Randoma({seed});
 
@@ -137,6 +151,10 @@ test('.floatInRange()', t => {
 
 test('.boolean()', t => {
 	runAsserts(t, 'boolean', assertBoolean);
+});
+
+test('.arrayItem()', t => {
+	runAsserts(t, 'arrayItem', assertArrayItem);
 });
 
 test('.date()', t => {

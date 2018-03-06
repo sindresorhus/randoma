@@ -8,7 +8,7 @@ const GOLDEN_RATIO_CONJUGATE = 0.618033988749895;
 
 module.exports = class {
 	constructor(options = {}) {
-		let seed = options.seed;
+		let {seed} = options;
 
 		if (typeof seed === 'string') {
 			seed = stringHash(seed);
@@ -39,6 +39,10 @@ module.exports = class {
 
 	boolean() {
 		return this._random.boolean();
+	}
+
+	arrayItem(array) {
+		return array[Math.floor(this.float() * array.length)];
 	}
 
 	date() {
