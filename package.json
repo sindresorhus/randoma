@@ -13,10 +13,11 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"pseudorandom",
@@ -35,13 +36,15 @@
 		"rng"
 	],
 	"dependencies": {
-		"@sindresorhus/string-hash": "^1.0.0",
-		"color": "^2.0.1",
-		"park-miller": "^1.0.0"
+		"@sindresorhus/string-hash": "^1.2.0",
+		"@types/color": "^3.0.0",
+		"color": "^3.1.1",
+		"park-miller": "^1.1.0"
 	},
 	"devDependencies": {
-		"@sindresorhus/is": "^0.7.0",
-		"ava": "*",
-		"xo": "*"
+		"@sindresorhus/is": "^0.15.0",
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
 	}
 }
