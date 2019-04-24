@@ -3,9 +3,9 @@ import ColorClass = require('color');
 declare namespace Randoma {
 	interface Options {
 		/**
-		[Initialization seed.](https://en.m.wikipedia.org/wiki/Random_seed) Multiple instances of `Randoma` with the same seed will generate the same random numbers.
+		[Initialization seed.](https://en.wikipedia.org/wiki/Random_seed) Multiple instances of `Randoma` with the same seed will generate the same random numbers.
 		*/
-		seed: string | number;
+		readonly seed: string | number;
 	}
 
 	type Color = ColorClass;

@@ -11,9 +11,7 @@ class Randoma {
 		return Math.floor(Math.random() * MAX_INT32);
 	}
 
-	constructor(options = {}) {
-		let {seed} = options;
-
+	constructor({seed}) {
 		if (typeof seed === 'string') {
 			seed = stringHash(seed);
 		}
@@ -57,9 +55,7 @@ class Randoma {
 		return new Date(this.integerInRange(startDate.getTime(), endDate.getTime()));
 	}
 
-	color(saturation) {
-		saturation = saturation || 0.5;
-
+	color(saturation = 0.5) {
 		let hue = this.float();
 		hue += GOLDEN_RATIO_CONJUGATE;
 		hue %= 1;
