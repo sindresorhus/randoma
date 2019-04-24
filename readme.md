@@ -44,12 +44,12 @@ random.integer();
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### seed
 
 *Required*<br>
-Type: `string` `integer`
+Type: `string | number`
 
 [Initialization seed.](https://en.m.wikipedia.org/wiki/Random_seed) Multiple instances of `Randoma` with the same seed will generate the same random numbers.
 

@@ -6,7 +6,11 @@ const color = require('color');
 const MAX_INT32 = 2147483647;
 const GOLDEN_RATIO_CONJUGATE = 0.618033988749895;
 
-module.exports = class {
+class Randoma {
+	static seed() {
+		return Math.floor(Math.random() * MAX_INT32);
+	}
+
 	constructor(options = {}) {
 		let {seed} = options;
 
@@ -66,6 +70,6 @@ module.exports = class {
 			v: 95
 		});
 	}
-};
+}
 
-module.exports.seed = () => Math.floor(Math.random() * MAX_INT32);
+module.exports = Randoma;
