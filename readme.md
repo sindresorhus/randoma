@@ -1,4 +1,4 @@
-# randoma [![Build Status](https://travis-ci.org/sindresorhus/randoma.svg?branch=master)](https://travis-ci.org/sindresorhus/randoma)
+# randoma
 
 > User-friendly [pseudorandom number generator (PRNG)](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
 
