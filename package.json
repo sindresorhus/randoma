@@ -4,13 +4,16 @@
 	"description": "User-friendly pseudorandom number generator (PRNG)",
 	"license": "MIT",
 	"repository": "sindresorhus/randoma",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=6"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -36,15 +39,15 @@
 		"rng"
 	],
 	"dependencies": {
-		"@sindresorhus/string-hash": "^1.2.0",
-		"@types/color": "^3.0.0",
-		"color": "^3.1.1",
-		"park-miller": "^1.1.0"
+		"@sindresorhus/string-hash": "^2.0.0",
+		"@types/color": "^3.0.2",
+		"color": "^4.0.1",
+		"park-miller": "^2.0.0"
 	},
 	"devDependencies": {
-		"@sindresorhus/is": "^0.15.0",
-		"ava": "^1.4.1",
-		"tsd": "^0.7.2",
-		"xo": "^0.24.0"
+		"@sindresorhus/is": "^4.2.0",
+		"ava": "^3.15.0",
+		"tsd": "^0.18.0",
+		"xo": "^0.46.4"
 	}
 }

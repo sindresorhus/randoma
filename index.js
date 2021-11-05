@@ -1,15 +1,16 @@
-'use strict';
-const ParkMiller = require('park-miller');
-const stringHash = require('@sindresorhus/string-hash');
-const color = require('color');
+import ParkMiller from 'park-miller';
+import stringHash from '@sindresorhus/string-hash';
+import color from 'color';
 
-const MAX_INT32 = 2147483647;
-const GOLDEN_RATIO_CONJUGATE = 0.618033988749895;
+const MAX_INT32 = 2_147_483_647;
+const GOLDEN_RATIO_CONJUGATE = 0.618_033_988_749_895;
 
-class Randoma {
+export default class Randoma {
 	static seed() {
 		return Math.floor(Math.random() * MAX_INT32);
 	}
+
+	#random;
 
 	constructor({seed}) {
 		if (typeof seed === 'string') {
@@ -20,27 +21,27 @@ class Randoma {
 			throw new TypeError('Expected `seed` to be a `integer`');
 		}
 
-		this._random = new ParkMiller(seed);
+		this.#random = new ParkMiller(seed);
 	}
 
 	integer() {
-		return this._random.integer();
+		return this.#random.integer();
 	}
 
-	integerInRange(min, max) {
-		return this._random.integerInRange(min, max);
+	integerInRange(minimum, maximum) {
+		return this.#random.integerInRange(minimum, maximum);
 	}
 
 	float() {
-		return this._random.float();
+		return this.#random.float();
 	}
 
-	floatInRange(min, max) {
-		return this._random.floatInRange(min, max);
+	floatInRange(minimum, maximum) {
+		return this.#random.floatInRange(minimum, maximum);
 	}
 
 	boolean() {
-		return this._random.boolean();
+		return this.#random.boolean();
 	}
 
 	arrayItem(array) {
@@ -63,9 +64,7 @@ class Randoma {
 		return color({
 			h: hue * 360,
 			s: saturation * 100,
-			v: 95
+			v: 95,
 		});
 	}
 }
-
-module.exports = Randoma;

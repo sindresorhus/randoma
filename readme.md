@@ -4,18 +4,18 @@
 
 This is not cryptographically secure.
 
+*“Pull request welcome” for additional commonly used random methods.*
 
 ## Install
 
+```sh
+npm install randoma
 ```
-$ npm install randoma
-```
-
 
 ## Usage
 
 ```js
-const Randoma = require('randoma');
+import Randoma from 'randoma';
 
 const random = new Randoma({seed: 10});
 
@@ -33,7 +33,6 @@ random.integer();
 //=> 1659974344
 ```
 
-
 ## API
 
 ### `const random = new Randoma(options)`
@@ -44,21 +43,23 @@ Type: `object`
 
 ##### seed
 
-*Required*<br>
+*Required*\
 Type: `string | number`
 
-[Initialization seed.](https://en.m.wikipedia.org/wiki/Random_seed) Multiple instances of `Randoma` with the same seed will generate the same random numbers.
+[Initialization seed.](https://en.m.wikipedia.org/wiki/Random_seed)
+
+Multiple instances of `Randoma` with the same seed will generate the same random numbers.
 
 #### random.integer()
-#### random.integerInRange(min, max)
+#### random.integerInRange(minimum, maximum)
 #### random.float()
-#### random.floatInRange(min, max)
+#### random.floatInRange(minimum, maximum)
 #### random.boolean()
 #### random.arrayItem(array)
 #### random.date()
 #### random.dateInRange(startDate, endDate)
 
-#### random.color([saturation])
+#### random.color(saturation?)
 
 Returns a random [aesthetically pleasing color](https://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/) as a [`color`](https://github.com/Qix-/color) object.
 
@@ -69,23 +70,15 @@ random.color(0.5).hex().toString()
 
 ##### saturation
 
-Type: `number`<br>
+Type: `number`\
 Default: `0.5`
 
-Saturation percentage in the range `0...1`.
-
-*"Pull request welcome" for additional commonly used random methods.*
+A percentage in the range `0...1`.
 
 ### Randoma.seed()
 
 Returns a random seed you could use in the `seed` option if you for some reason don't want deterministic randomness.
 
-
 ## Related
 
 - [park-miller](https://github.com/sindresorhus/park-miller) - Park-Miller pseudorandom number generator (PRNG)
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
