@@ -12,11 +12,14 @@
 	},
 	"type": "module",
 	"exports": "./index.js",
+	"types": "./index.d.ts",
+	"sideEffects": false,
 	"engines": {
 		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"//test": "xo && ava && tsd",
+		"test": "ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -42,7 +45,7 @@
 		"@sindresorhus/string-hash": "^2.0.0",
 		"@types/color": "^3.0.2",
 		"color": "^4.0.1",
-		"park-miller": "^2.0.0"
+		"park-miller": "^2.0.1"
 	},
 	"devDependencies": {
 		"@sindresorhus/is": "^4.2.0",
