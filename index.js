@@ -57,6 +57,9 @@ export default class Randoma {
 	}
 
 	color(saturation = 0.5) {
+		// Advance the generator once to avoid poor distribution of first values from fresh seeds
+		this.#random.float();
+
 		let hue = this.float();
 		hue += GOLDEN_RATIO_CONJUGATE;
 		hue %= 1;

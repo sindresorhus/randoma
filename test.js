@@ -167,7 +167,23 @@ test('.dateInRange()', t => {
 
 test('.color()', t => {
 	const random = new Randoma({seed: 1});
-	t.is(random.color(0.5).hex().toString(), '#799CF2');
+	t.is(random.color(0.5).hex().toString(), '#B579F2');
+});
+
+test('.color() distribution', t => {
+	// Test that first colors from different seeds have good distribution
+	const colors = [];
+	const seedCount = 1000;
+	
+	for (let seed = 0; seed < seedCount; seed++) {
+		const random = new Randoma({seed});
+		colors.push(random.color().hex());
+	}
+	
+	const uniqueColors = new Set(colors);
+	// Should have significantly more unique colors than the old buggy behavior (~57)
+	// With the fix, we get ~685/1000 (68.5%), which is much better
+	t.true(uniqueColors.size > 600); // Should have at least 600 unique colors out of 1000
 });
 
 test('string seed', t => {
